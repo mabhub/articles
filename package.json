@@ -1,0 +1,21 @@
+{
+  "name": "articles",
+  "version": "1.0.0",
+  "description": "Articles rédigés au format Markdown",
+  "main": "index.js",
+  "scripts": {
+    "gfm2html": "node lib/gfm2html.js",
+    "start": "find . -type f -name '*.md' -not -path './node_modules/*' -not -name 'README.md' -exec npm run gfm2html {} \\;",
+    "clean": "rm -rf html/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabhub/articles.git"
+  },
+  "author": "Benjamin Marguin",
+  "license": "MIT",
+  "dependencies": {
+    "highlight.js": "^9.2.0",
+    "marked": "^0.3.5"
+  }
+}
