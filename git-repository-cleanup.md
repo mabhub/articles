@@ -3,24 +3,22 @@
 Pour diverse raison (erreurs, mauvaise gestion,...),
 il arrive qu'un dépôt git prenne une taille démesurée,
 ce qui peu vite devenir handicapant.
-
 Il devient donc parfois necessaire de faire un peu de ménage
 et retirer completement certains fichiers du dépôt
 peut être une solution efficace.
-
-_Cette solution peu également permettre de retirer d'un projet
-des fichiers contenant des données sensibles ou confidentielles._
 
 Attention, lorsqu'on dit ici retirer un fichier du dépôt,
 il ne s'agit pas de simplement faire un commit le supprimant
 (ce qui ne changerait en rien la taille du dépôt),
 mais de modifier l'historique complet des commits
 pour faire en sorte de l'en retirer completement.
-
-**Attention**, cette ré-écriture complète de l'historique rendra le dépôt
+Cette ré-écriture complète de l'historique rendra le dépôt
 incompatible avec tout autre clone du même projet.
 
-**À partir d'un dépôt local, à jour :**
+_Cette solution peu également permettre de retirer d'un projet
+des fichiers contenant des données sensibles ou confidentielles._
+
+### À partir d'un dépôt local, à jour :
 
 * Retirer tous les remotes
 ```shell
@@ -33,10 +31,11 @@ _par exemple : `git remote rm origin`_
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
   * `filter-branch` est la commande permettant de re-ecrire la branche courante.
-  * `--index-filter` permet d'accélerer le traitement en traitant l'index au lieu des fichiers du disque.
-  * `--cached` modifie l'index et la zone d'attente au lieu des fichiers du disque.
-  * `--ignore-unmatch` permet de ne pas générer d'erreur si le fichier à supprimer n'existe pas.
-  * `-- --all` permet d'agir sur toutes les branches.
+    * `--index-filter` permet d'accélerer le traitement en traitant l'index au lieu des fichiers du disque.
+  * `rm` supprime.
+    * `--cached` modifie l'index et la zone d'attente au lieu des fichiers du disque.
+    * `--ignore-unmatch` permet de ne pas générer d'erreur si la référence à supprimer n'existe pas.
+    * `-- --all` permet d'agir sur toutes les branches.
 
 * La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt :
 ```shell
