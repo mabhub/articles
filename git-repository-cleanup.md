@@ -30,12 +30,12 @@ _par exemple : `git remote rm origin`_
 ```shell
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
-  * `filter-branch` est la commande permettant de re-ecrire la branche courante.
-    * `--index-filter` permet d'accélérer le traitement en traitant l'index au lieu des fichiers du disque.
-  * `rm` supprime.
-    * `--cached` modifie l'index et la zone d'attente au lieu des fichiers du disque.
-    * `--ignore-unmatch` permet de ne pas générer d'erreur si la référence à supprimer n'existe pas.
-    * `-- --all` permet d'agir sur toutes les branches.
+>   * `filter-branch` est la commande permettant de re-ecrire la branche courante.
+>     * `--index-filter` permet d'accélérer le traitement en traitant l'index au lieu des fichiers du disque.
+>   * `rm` supprime.
+>     * `--cached` modifie l'index et la zone d'attente au lieu des fichiers du disque.
+>     * `--ignore-unmatch` permet de ne pas générer d'erreur si la référence à supprimer n'existe pas.
+>     * `-- --all` permet d'agir sur toutes les branches.
 
 * La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt :
 ```shell
@@ -47,6 +47,8 @@ rm -rf .git/logs/
 ```shell
 git gc --aggressive --prune=now
 ```
+>   * `--aggressive` optimise plus profondément le dépôt.
+>   * `--prune=now` supprime tous les objets inutilisés immédiatement (par défaut, `--prune` supprime uniquement les objets inutilisés depuis plus de deux semaines).
 
 
 Pour une version plus détaillées, vous pouvez vous référer à la [version française du livre <u>Pro Git</u>](http://git-scm.com/book/fr/v2/Les-tripes-de-Git-Maintenance-et-r%C3%A9cup%C3%A9ration-de-donn%C3%A9es#Suppression-d’objets) accessible librement en ligne.
