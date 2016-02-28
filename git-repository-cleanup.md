@@ -22,13 +22,13 @@ incompatible avec tout autre clone du même projet.
 
 **À partir d'un dépôt local, à jour :**
 
-1. Retirer tous les remotes
+* Retirer tous les remotes
 ```shell
 git remote rm <remote_name>
 ```
 _par exemple : `git remote rm origin`_
 
-2. Supprimer toutes les références au fichier à effacer :
+* Supprimer toutes les références au fichier à effacer :
 ```shell
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
@@ -38,13 +38,13 @@ git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à s
   * `--ignore-unmatch` permet de ne pas générer d'erreur si le fichier à supprimer n'existe pas.
   * `-- --all` permet d'agir sur toutes les branches.
 
-3. La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt :
+* La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt :
 ```shell
 rm -rf .git/refs/original/
 rm -rf .git/logs/
 ```
 
-4. Pour terminer, le _garbage collector_ va supprimer tous les objets qui ne sont plus référencés :
+* Pour terminer, le _garbage collector_ va supprimer tous les objets qui ne sont plus référencés :
 ```shell
 git gc --aggressive --prune=now
 ```
