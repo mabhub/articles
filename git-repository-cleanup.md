@@ -51,4 +51,4 @@ git gc --aggressive --prune=now
 >   * `--prune=now` supprime tous les objets inutilisés immédiatement (par défaut, `--prune` supprime uniquement les objets inutilisés depuis plus de deux semaines).
 
 
-Pour une version plus détaillées, vous pouvez vous référer à la [version française du livre <u>Pro Git</u>](http://git-scm.com/book/fr/v2/Les-tripes-de-Git-Maintenance-et-r%C3%A9cup%C3%A9ration-de-donn%C3%A9es#Suppression-d’objets) accessible librement en ligne.
+Pour une version plus détaillée, vous pouvez vous référer à la [version française du livre <u>Pro Git</u>](http://git-scm.com/book/fr/v2/Les-tripes-de-Git-Maintenance-et-r%C3%A9cup%C3%A9ration-de-donn%C3%A9es#Suppression-d’objets) accessible librement en ligne.
