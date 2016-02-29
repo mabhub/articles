@@ -1,6 +1,6 @@
 # Nettoyer un dépôt Git
 
-Pour diverse raison (erreurs, mauvaise gestion,...),
+Pour diverses raisons (erreurs, mauvaise gestion, …),
 il arrive qu'un dépôt git prenne une taille démesurée,
 ce qui peu vite devenir handicapant.
 Il devient donc parfois nécessaire de faire un peu de ménage
@@ -26,11 +26,11 @@ git remote rm <remote_name>
 ```
 _par exemple : `git remote rm origin`_
 
-* Supprimer toutes les références au fichier à effacer :
+* Supprimer toutes les références du fichier à effacer :
 ```shell
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
->   * `filter-branch` est la commande permettant de re-ecrire la branche courante.
+>   * `filter-branch` est la commande permettant de ré-écrire la branche courante.
 >     * `--index-filter` permet d'accélérer le traitement en traitant l'index au lieu des fichiers du disque.
 >   * `rm` supprime.
 >     * `--cached` modifie l'index et la zone d'attente au lieu des fichiers du disque.
@@ -51,4 +51,4 @@ git gc --aggressive --prune=now
 >   * `--prune=now` supprime tous les objets inutilisés immédiatement (par défaut, `--prune` supprime uniquement les objets inutilisés depuis plus de deux semaines).
 
 
-Pour une version plus détaillées, vous pouvez vous référer à la [version française du livre <u>Pro Git</u>](http://git-scm.com/book/fr/v2/Les-tripes-de-Git-Maintenance-et-r%C3%A9cup%C3%A9ration-de-donn%C3%A9es#Suppression-d’objets) accessible librement en ligne.
+Pour une version plus détaillée, vous pouvez vous référer à la [version française du livre <u>Pro Git</u>](http://git-scm.com/book/fr/v2/Les-tripes-de-Git-Maintenance-et-r%C3%A9cup%C3%A9ration-de-donn%C3%A9es#Suppression-d’objets) accessible librement en ligne.
