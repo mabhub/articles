@@ -37,7 +37,7 @@ git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à s
 >     * `--ignore-unmatch` permet de ne pas générer d'erreur si la référence à supprimer n'existe pas.
 >     * `-- --all` permet d'agir sur toutes les branches.
 
-* La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt :
+* La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt _(**Attention**, à partir d'ici on est réellement destructif, pas de retour en arrière possible)_ :
 ```shell
 rm -rf .git/refs/original/
 rm -rf .git/logs/
