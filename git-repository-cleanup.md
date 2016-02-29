@@ -21,13 +21,13 @@ des fichiers contenant des données sensibles ou confidentielles._
 ### À partir d'un dépôt local, à jour :
 
 * Retirer tous les remotes
-```shell
+```bash
 git remote rm <remote_name>
 ```
 _par exemple : `git remote rm origin`_
 
 * Supprimer toutes les références du fichier à effacer :
-```shell
+```bash
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
 >   * `filter-branch` est la commande permettant de ré-écrire la branche courante.
@@ -38,13 +38,13 @@ git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à s
 >     * `-- --all` permet d'agir sur toutes les branches.
 
 * La commande `filter-branch` génère automatiquement une sauvegarde qu'il nous faut supprimer pour réellement alléger le dépôt _(**Attention**, à partir d'ici on est réellement destructif, pas de retour en arrière possible)_ :
-```shell
+```bash
 rm -rf .git/refs/original/
 rm -rf .git/logs/
 ```
 
 * Pour terminer, le _garbage collector_ va supprimer tous les objets qui ne sont plus référencés :
-```shell
+```bash
 git gc --aggressive --prune=now
 ```
 >   * `--aggressive` optimise plus profondément le dépôt.
