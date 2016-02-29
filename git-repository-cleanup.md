@@ -30,7 +30,7 @@ _par exemple : `git remote rm origin`_
 ```shell
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
->   * `filter-branch` est la commande permettant de re-ecrire la branche courante.
+>   * `filter-branch` est la commande permettant de ré-écrire la branche courante.
 >     * `--index-filter` permet d'accélérer le traitement en traitant l'index au lieu des fichiers du disque.
 >   * `rm` supprime.
 >     * `--cached` modifie l'index et la zone d'attente au lieu des fichiers du disque.
