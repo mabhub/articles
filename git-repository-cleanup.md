@@ -1,6 +1,6 @@
 # Nettoyer un dépôt Git
 
-Pour diverse raison (erreurs, mauvaise gestion,...),
+Pour diverses raisons (erreurs, mauvaise gestion,...),
 il arrive qu'un dépôt git prenne une taille démesurée,
 ce qui peu vite devenir handicapant.
 Il devient donc parfois nécessaire de faire un peu de ménage
