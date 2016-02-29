@@ -26,7 +26,7 @@ git remote rm <remote_name>
 ```
 _par exemple : `git remote rm origin`_
 
-* Supprimer toutes les références au fichier à effacer :
+* Supprimer toutes les références du fichier à effacer :
 ```shell
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
 ```
