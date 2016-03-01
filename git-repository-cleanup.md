@@ -22,13 +22,12 @@ des fichiers contenant des données sensibles ou confidentielles._
 
 * Retirer tous les remotes
 ```bash
-git remote rm <remote_name>
+git remote rm origin
 ```
-_par exemple : `git remote rm origin`_
-
 * Supprimer toutes les références du fichier à effacer :
 ```bash
-git filter-branch --index-filter 'git rm --cached --ignore-unmatch <fichier à supprimer> -- --all'
+git filter-branch --index-filter \
+    'git rm --cached --ignore-unmatch fichier_a_effacer.zip -- --all'
 ```
 >   * `filter-branch` est la commande permettant de ré-écrire la branche courante.
 >     * `--index-filter` permet d'accélérer le traitement en traitant l'index au lieu des fichiers du disque.
