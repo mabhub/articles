@@ -13,7 +13,7 @@ il ne s'agit pas de simplement faire un commit le supprimant
 mais de modifier l'historique complet des commits
 pour faire en sorte de l'en retirer complètement.
 Cette ré-écriture complète de l'historique rendra le dépôt
-incompatible avec tout autre clone du même projet.
+**incompatible** avec tout autre clone du même projet.
 
 _Cette solution peu également permettre de retirer d'un projet
 des fichiers contenant des données sensibles ou confidentielles._
