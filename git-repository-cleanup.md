@@ -1,4 +1,8 @@
-# Nettoyer un dépôt Git
+---
+title: Nettoyer un dépôt Git
+description: Comment nettoyer en profondeur un dépôt Git
+url: /blog/metier/2016/nettoyer-un-depot-git
+---
 
 Pour diverses raisons (erreurs, mauvaise gestion, …),
 il arrive qu'un dépôt git prenne une taille démesurée,
