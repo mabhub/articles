@@ -16,6 +16,7 @@
   "author": "Benjamin Marguin",
   "license": "MIT",
   "dependencies": {
+    "front-matter": "^2.0.6",
     "highlight.js": "^9.2.0",
     "marked": "^0.3.5",
     "prompt": "^1.0.0",
